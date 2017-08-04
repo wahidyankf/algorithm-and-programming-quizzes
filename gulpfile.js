@@ -24,7 +24,7 @@ var gulp = require('gulp'),
 var options = {
     src: 'src',
     dist: 'dist',
-    solution: 'solutions',
+    solution: 'solutions - javascript',
     test: 'optimization-testing/public'
 };
 
@@ -69,7 +69,7 @@ gulp.task('cleanTest', function () {
     return del([options.test + '/**']);
 });
 
-gulp.task('cleanSolution', function () {
+gulp.task('cleanJsSolution', function () {
     return del([options.solution + '/**']);
 });
 
@@ -144,7 +144,7 @@ gulp.task('copyTest', function () {
         .pipe(gulp.dest(options.test));
 });
 
-gulp.task('copySolution', function () {
+gulp.task('copyJsSolution', function () {
     return gulp.src(options.src + '/js/solutions/**')
         .pipe(gulp.dest(options.solution));
 });
@@ -161,8 +161,8 @@ gulp.task('build', ['html'], function () {
     gulp.start('prepareTest');
 });
 
-gulp.task('buildSolution', ['cleanSolution'], function (){
-    gulp.start('copySolution');
+gulp.task('buildJsSolution', ['cleanJsSolution'], function (){
+    gulp.start('copyJsSolution');
 });
 
 gulp.task('deployMaster', function () {
