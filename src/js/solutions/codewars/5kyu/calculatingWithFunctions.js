@@ -11,10 +11,10 @@
 // Each calculation consist of exactly one operation and two numbers
 // The most outer function represents the left operand, the most inner function represents the right operand
 
-let n = function (digit) {
-  return function (operation) {
-    return operation ? operation(digit) : digit;
-  };
+let n = function(digit) {
+	return function(operation) {
+		return operation ? operation(digit) : digit;
+	};
 };
 
 let zero = n(0);
@@ -29,27 +29,27 @@ let eight = n(8);
 let nine = n(9);
 
 function plus(rightArg) {
-  return function (leftArg) {
-    return leftArg + rightArg;
-  };
+	return function(leftArg) {
+		return leftArg + rightArg;
+	};
 }
 
 function minus(rightArg) {
-  return function (leftArg) {
-    return leftArg - rightArg;
-  };
+	return function(leftArg) {
+		return leftArg - rightArg;
+	};
 }
 
 function times(rightArg) {
-  return function (leftArg) {
-    return leftArg * rightArg;
-  };
+	return function(leftArg) {
+		return leftArg * rightArg;
+	};
 }
 
 function dividedBy(rightArg) {
-  return function (leftArg) {
-    return leftArg / rightArg;
-  };
+	return function(leftArg) {
+		return leftArg / rightArg;
+	};
 }
 
 console.log(seven(times(five()))); // must return 35

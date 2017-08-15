@@ -16,18 +16,18 @@
 // I have also created other katas. Take a look if you enjoyed this kata!
 
 function findMissingLetter(array) {
-  let letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	let letter = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-  let startIndex = letter.indexOf(array[0]);
+	let startIndex = letter.indexOf(array[0]);
 
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] !== letter[startIndex + i]){
-      return letter[startIndex+i];
-    } 
-  }
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] !== letter[startIndex + i]) {
+			return letter[startIndex + i];
+		}
+	}
 
-  return ' ';
+	return ' ';
 }
 
-console.log(findMissingLetter(['a','b','c','d','f']));
-console.log(findMissingLetter(['O','Q','R','S']));
+console.log(findMissingLetter([ 'a', 'b', 'c', 'd', 'f' ]));
+console.log(findMissingLetter([ 'O', 'Q', 'R', 'S' ]));

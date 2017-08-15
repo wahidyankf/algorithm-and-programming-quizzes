@@ -14,44 +14,44 @@
 // for example, a tower of 3 floors looks like below
 
 // [
-//   '  *  ', 
-//   ' *** ', 
+//   '  *  ',
+//   ' *** ',
 //   '*****'
 // ]
 // and a tower of 6 floors looks like below
 
 // [
-//   '     *     ', 
-//   '    ***    ', 
-//   '   *****   ', 
-//   '  *******  ', 
-//   ' ********* ', 
+//   '     *     ',
+//   '    ***    ',
+//   '   *****   ',
+//   '  *******  ',
+//   ' ********* ',
 //   '***********'
 // ]
 // Go challenge Build Tower Advanced once you have finished this :)
 
 function towerBuilder(nFloors) {
-  let tower = [];
-  for (let i = 0; i < nFloors; i++) {
-    let temp = "";
+	let tower = [];
+	for (let i = 0; i < nFloors; i++) {
+		let temp = '';
 
-    let floor = "";
-    for (let j = 0; j < 2*i+1; j++){
-      floor += "*";
-    }
-    
-    let separator = "";
-    if (i === nFloors - 1) {
-      separator = "";
-    } else {
-      for (let j = 0; j < (nFloors - i)-1;j = j+1){
-        separator += " ";
-      }
-    }
-    temp += separator + floor + separator;
-    tower.push(temp);
-  }
-  return tower;
+		let floor = '';
+		for (let j = 0; j < 2 * i + 1; j++) {
+			floor += '*';
+		}
+
+		let separator = '';
+		if (i === nFloors - 1) {
+			separator = '';
+		} else {
+			for (let j = 0; j < nFloors - i - 1; j = j + 1) {
+				separator += ' ';
+			}
+		}
+		temp += separator + floor + separator;
+		tower.push(temp);
+	}
+	return tower;
 }
 
 console.log(towerBuilder(1));

@@ -7,28 +7,27 @@
 // toWeirdCase( "String" );//=> returns "StRiNg"
 // toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe"
 
-function toWeirdCase(string){
-  let resultString = [];
+function toWeirdCase(string) {
+	let resultString = [];
 
-  string = string.split(" ");
+	string = string.split(' ');
 
-  for (let i = 0; i < string.length; i++){
+	for (let i = 0; i < string.length; i++) {
+		let tempString = '';
 
-    let tempString = "";
+		for (let j = 0; j < string[i].length; j++) {
+			if (j === 0 || j % 2 !== 1) {
+				tempString += string[i][j].toUpperCase();
+			} else {
+				tempString += string[i][j].toLowerCase();
+			}
+		}
 
-    for (let j = 0; j < string[i].length; j++){
-      if (j === 0 || j%2 !== 1){
-        tempString += string[i][j].toUpperCase();
-      } else {
-        tempString += string[i][j].toLowerCase();
-      }
-    }
+		resultString.push(tempString);
+	}
 
-    resultString.push(tempString);
-  }
-
-  return resultString.join(" ");
+	return resultString.join(' ');
 }
 
-console.log(toWeirdCase("This is a test"));
-console.log(toWeirdCase("This"));
+console.log(toWeirdCase('This is a test'));
+console.log(toWeirdCase('This'));
