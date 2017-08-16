@@ -9,30 +9,30 @@ let walk3 = [ 'w' ];
 let walk4 = [ 'n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's' ];
 
 function isValidWalk(walk) {
-	//insert brilliant code here
-	let coordinate = [ 0, 0 ];
+  //insert brilliant code here
+  let coordinate = [ 0, 0 ];
 
-	if (walk.length !== 10) {
-		return false;
-	}
+  if (walk.length !== 10) {
+    return false;
+  }
 
-	for (let step = 0; step < walk.length; step++) {
-		if (walk[step] === 'n') {
-			coordinate[0] += 1;
-		} else if (walk[step] === 's') {
-			coordinate[0] -= 1;
-		} else if (walk[step] === 'e') {
-			coordinate[1] += 1;
-		} else if (walk[step] === 'w') {
-			coordinate[1] -= 1;
-		}
-	}
+  for (let step = 0; step < walk.length; step++) {
+    if (walk[step] === 'n') {
+      coordinate[0] += 1;
+    } else if (walk[step] === 's') {
+      coordinate[0] -= 1;
+    } else if (walk[step] === 'e') {
+      coordinate[1] += 1;
+    } else if (walk[step] === 'w') {
+      coordinate[1] -= 1;
+    }
+  }
 
-	if (coordinate[0] === 0 && coordinate[1] === 0) {
-		return true;
-	} else {
-		return false;
-	}
+  if (coordinate[0] === 0 && coordinate[1] === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log(isValidWalk(walk));

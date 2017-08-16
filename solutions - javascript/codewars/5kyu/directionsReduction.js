@@ -50,52 +50,52 @@
 // not all paths can be made simpler. the path ["north", "west", "south", "east"] is not reducible. "north" and "west", "west" and "south", "south" and "east" are not directly opposite of each other and can't become such. hence the result path is itself : ["north", "west", "south", "east"].
 
 function dirReduc(arr) {
-	// ...
-	// iteration, check reduction
-	let originalLength = arr.length;
-	let arrayLength = arr.length;
-	if (arrayLength > 1) {
-		for (let i = 0; i < arrayLength; i++) {
-			if (arr[i].toLowerCase() == 'north') {
-				if (i + 1 < arrayLength) {
-					if (arr[i + 1].toLowerCase() == 'south') {
-						arr.splice(i, 2);
-						i -= 1;
-						arrayLength -= 2;
-					}
-				}
-			} else if (arr[i].toLowerCase() == 'south') {
-				if (i + 1 < arrayLength) {
-					if (arr[i + 1].toLowerCase() == 'north') {
-						arr.splice(i, 2);
-						i -= 1;
-						arrayLength -= 2;
-					}
-				}
-			} else if (arr[i].toLowerCase() == 'east') {
-				if (i + 1 < arrayLength) {
-					if (arr[i + 1].toLowerCase() == 'west') {
-						arr.splice(i, 2);
-						i -= 1;
-						arrayLength -= 2;
-					}
-				}
-			} else if (arr[i].toLowerCase() == 'west') {
-				if (i + 1 < arrayLength) {
-					if (arr[i + 1].toLowerCase() == 'east') {
-						arr.splice(i, 2);
-						i -= 1;
-						arrayLength -= 2;
-					}
-				}
-			}
-		}
-	}
-	console.log(arr);
-	if (originalLength !== arrayLength) {
-		dirReduc(arr);
-	}
-	return arr;
+  // ...
+  // iteration, check reduction
+  let originalLength = arr.length;
+  let arrayLength = arr.length;
+  if (arrayLength > 1) {
+    for (let i = 0; i < arrayLength; i++) {
+      if (arr[i].toLowerCase() == 'north') {
+        if (i + 1 < arrayLength) {
+          if (arr[i + 1].toLowerCase() == 'south') {
+            arr.splice(i, 2);
+            i -= 1;
+            arrayLength -= 2;
+          }
+        }
+      } else if (arr[i].toLowerCase() == 'south') {
+        if (i + 1 < arrayLength) {
+          if (arr[i + 1].toLowerCase() == 'north') {
+            arr.splice(i, 2);
+            i -= 1;
+            arrayLength -= 2;
+          }
+        }
+      } else if (arr[i].toLowerCase() == 'east') {
+        if (i + 1 < arrayLength) {
+          if (arr[i + 1].toLowerCase() == 'west') {
+            arr.splice(i, 2);
+            i -= 1;
+            arrayLength -= 2;
+          }
+        }
+      } else if (arr[i].toLowerCase() == 'west') {
+        if (i + 1 < arrayLength) {
+          if (arr[i + 1].toLowerCase() == 'east') {
+            arr.splice(i, 2);
+            i -= 1;
+            arrayLength -= 2;
+          }
+        }
+      }
+    }
+  }
+  console.log(arr);
+  if (originalLength !== arrayLength) {
+    dirReduc(arr);
+  }
+  return arr;
 }
 
 console.log('First: ' + dirReduc([ 'NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST' ]));

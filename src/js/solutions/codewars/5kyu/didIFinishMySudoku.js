@@ -75,104 +75,104 @@
 //                          [3, 0, 0, 4, 8, 1, 1, 7, 9]]), "Try again!");
 
 let doneOrNot = (board) => {
-	// check duplicate
-	const checkDuplicate = (array) => {
-		let setArray = new Set(array);
-		if (array.length === setArray.size) {
-			return false;
-		} else {
-			return true;
-		}
-	};
+  // check duplicate
+  const checkDuplicate = (array) => {
+    let setArray = new Set(array);
+    if (array.length === setArray.size) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
-	// check row
-	for (let i = 0; i < board.length; i++) {
-		if (checkDuplicate(board[i])) {
-			return 'Try again!';
-		}
-	}
+  // check row
+  for (let i = 0; i < board.length; i++) {
+    if (checkDuplicate(board[i])) {
+      return 'Try again!';
+    }
+  }
 
-	// produce column's array
-	let column = [];
-	for (let i = 0; i < board.length; i++) {
-		column.push([]);
-	}
-	for (let i = 0; i < board.length; i++) {
-		for (let j = 0; j < board.length; j++) {
-			column[i].push(board[j][i]);
-		}
-	}
+  // produce column's array
+  let column = [];
+  for (let i = 0; i < board.length; i++) {
+    column.push([]);
+  }
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board.length; j++) {
+      column[i].push(board[j][i]);
+    }
+  }
 
-	// check column
-	for (let i = 0; i < column.length; i++) {
-		if (checkDuplicate(column[i])) {
-			return 'Try again!';
-		}
-	}
+  // check column
+  for (let i = 0; i < column.length; i++) {
+    if (checkDuplicate(column[i])) {
+      return 'Try again!';
+    }
+  }
 
-	// produce grid
-	let grid = [];
+  // produce grid
+  let grid = [];
 
-	for (let i = 0; i < board.length; i += 3) {
-		for (let j = 0; j < board.length; j += 3) {
-			let temp = [];
-			for (let k = 0; k < 3; k++) {
-				for (let l = 0; l < 3; l++) {
-					temp.push(board[k + i][l + j]);
-				}
-			}
-			grid.push(temp);
-		}
-	}
+  for (let i = 0; i < board.length; i += 3) {
+    for (let j = 0; j < board.length; j += 3) {
+      let temp = [];
+      for (let k = 0; k < 3; k++) {
+        for (let l = 0; l < 3; l++) {
+          temp.push(board[k + i][l + j]);
+        }
+      }
+      grid.push(temp);
+    }
+  }
 
-	// check grid
-	for (let i = 0; i < board.length; i++) {
-		if (checkDuplicate(grid[i])) {
-			return 'Try again!';
-		}
-	}
+  // check grid
+  for (let i = 0; i < board.length; i++) {
+    if (checkDuplicate(grid[i])) {
+      return 'Try again!';
+    }
+  }
 
-	return 'Finished!';
+  return 'Finished!';
 };
 
 console.log(
-	doneOrNot([
-		[ 5, 3, 4, 6, 7, 8, 9, 1, 2 ],
-		[ 6, 7, 2, 1, 9, 5, 3, 4, 8 ],
-		[ 1, 9, 8, 3, 4, 2, 5, 6, 7 ],
-		[ 8, 5, 9, 7, 6, 1, 4, 2, 3 ],
-		[ 4, 2, 6, 8, 5, 3, 7, 9, 1 ],
-		[ 7, 1, 3, 9, 2, 4, 8, 5, 6 ],
-		[ 9, 6, 1, 5, 3, 7, 2, 8, 4 ],
-		[ 2, 8, 7, 4, 1, 9, 6, 3, 5 ],
-		[ 3, 4, 5, 2, 8, 6, 1, 7, 9 ]
-	])
+  doneOrNot([
+    [ 5, 3, 4, 6, 7, 8, 9, 1, 2 ],
+    [ 6, 7, 2, 1, 9, 5, 3, 4, 8 ],
+    [ 1, 9, 8, 3, 4, 2, 5, 6, 7 ],
+    [ 8, 5, 9, 7, 6, 1, 4, 2, 3 ],
+    [ 4, 2, 6, 8, 5, 3, 7, 9, 1 ],
+    [ 7, 1, 3, 9, 2, 4, 8, 5, 6 ],
+    [ 9, 6, 1, 5, 3, 7, 2, 8, 4 ],
+    [ 2, 8, 7, 4, 1, 9, 6, 3, 5 ],
+    [ 3, 4, 5, 2, 8, 6, 1, 7, 9 ]
+  ])
 ); // "Finished!"
 
 console.log(
-	doneOrNot([
-		[ 5, 3, 4, 6, 7, 8, 9, 1, 2 ],
-		[ 6, 7, 2, 1, 9, 5, 3, 4, 8 ],
-		[ 1, 9, 8, 3, 4, 2, 5, 6, 7 ],
-		[ 8, 5, 9, 7, 6, 1, 4, 2, 3 ],
-		[ 1, 2, 6, 8, 5, 3, 7, 9, 1 ],
-		[ 7, 1, 3, 9, 2, 4, 8, 5, 6 ],
-		[ 9, 6, 1, 5, 3, 7, 2, 8, 4 ],
-		[ 2, 8, 7, 4, 1, 9, 6, 3, 5 ],
-		[ 3, 4, 5, 2, 8, 6, 1, 7, 9 ]
-	])
+  doneOrNot([
+    [ 5, 3, 4, 6, 7, 8, 9, 1, 2 ],
+    [ 6, 7, 2, 1, 9, 5, 3, 4, 8 ],
+    [ 1, 9, 8, 3, 4, 2, 5, 6, 7 ],
+    [ 8, 5, 9, 7, 6, 1, 4, 2, 3 ],
+    [ 1, 2, 6, 8, 5, 3, 7, 9, 1 ],
+    [ 7, 1, 3, 9, 2, 4, 8, 5, 6 ],
+    [ 9, 6, 1, 5, 3, 7, 2, 8, 4 ],
+    [ 2, 8, 7, 4, 1, 9, 6, 3, 5 ],
+    [ 3, 4, 5, 2, 8, 6, 1, 7, 9 ]
+  ])
 ); // "Try again!"
 
 console.log(
-	doneOrNot([
-		[ 5, 3, 4, 6, 7, 8, 9, 1, 2 ],
-		[ 6, 7, 2, 1, 9, 0, 3, 4, 9 ],
-		[ 1, 0, 0, 3, 4, 2, 5, 6, 0 ],
-		[ 8, 5, 9, 7, 6, 1, 0, 2, 0 ],
-		[ 4, 2, 6, 8, 5, 3, 7, 9, 1 ],
-		[ 7, 1, 3, 9, 2, 4, 8, 5, 6 ],
-		[ 9, 0, 1, 5, 3, 7, 2, 1, 4 ],
-		[ 2, 8, 7, 4, 1, 9, 6, 3, 5 ],
-		[ 3, 0, 0, 4, 8, 1, 1, 7, 9 ]
-	])
+  doneOrNot([
+    [ 5, 3, 4, 6, 7, 8, 9, 1, 2 ],
+    [ 6, 7, 2, 1, 9, 0, 3, 4, 9 ],
+    [ 1, 0, 0, 3, 4, 2, 5, 6, 0 ],
+    [ 8, 5, 9, 7, 6, 1, 0, 2, 0 ],
+    [ 4, 2, 6, 8, 5, 3, 7, 9, 1 ],
+    [ 7, 1, 3, 9, 2, 4, 8, 5, 6 ],
+    [ 9, 0, 1, 5, 3, 7, 2, 1, 4 ],
+    [ 2, 8, 7, 4, 1, 9, 6, 3, 5 ],
+    [ 3, 0, 0, 4, 8, 1, 1, 7, 9 ]
+  ])
 ); // "Try again!"

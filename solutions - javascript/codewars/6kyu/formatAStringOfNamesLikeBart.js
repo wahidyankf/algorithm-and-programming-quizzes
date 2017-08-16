@@ -18,29 +18,29 @@
 // Note: all the hashes are pre-validated and will only contain A-Z, a-z, '-' and '.'.
 
 function list(names) {
-	//your code here
-	let nameList = '';
-	let separator = '';
-	console.log(names.length);
+  //your code here
+  let nameList = '';
+  let separator = '';
+  console.log(names.length);
 
-	for (let i = 0; i < names.length; i++) {
-		console.log(i);
+  for (let i = 0; i < names.length; i++) {
+    console.log(i);
 
-		if (i === 0) {
-			separator = '';
-		} else if (i === names.length - 1) {
-			separator = ' & ';
-		} else {
-			separator = ', ';
-		}
+    if (i === 0) {
+      separator = '';
+    } else if (i === names.length - 1) {
+      separator = ' & ';
+    } else {
+      separator = ', ';
+    }
 
-		nameList += separator;
-		nameList += names[i].name;
-		console.log(nameList);
-	}
+    nameList += separator;
+    nameList += names[i].name;
+    console.log(nameList);
+  }
 
-	console.log('...');
-	return nameList;
+  console.log('...');
+  return nameList;
 }
 
 console.log(list([ { name: 'Bart' }, { name: 'Lisa' }, { name: 'Maggie' } ]));

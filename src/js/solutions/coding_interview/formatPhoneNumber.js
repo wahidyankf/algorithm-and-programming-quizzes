@@ -8,48 +8,48 @@
 // 555372654 -> 555 372 654
 
 function solution(S) {
-	// write your code in JavaScript (Node.js 6.4.0)
-	let numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
-	let filtered = [];
-	let processedNumber = [];
-	let formattedNumber = '';
+  // write your code in JavaScript (Node.js 6.4.0)
+  let numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+  let filtered = [];
+  let processedNumber = [];
+  let formattedNumber = '';
 
-	for (let i = 0; i < S.length; i++) {
-		if (S[i] in numbers) {
-			filtered.push(S[i]);
-		}
-	}
+  for (let i = 0; i < S.length; i++) {
+    if (S[i] in numbers) {
+      filtered.push(S[i]);
+    }
+  }
 
-	if (filtered.length % 3 === 0) {
-		for (let i = 0; i < filtered.length; i++) {
-			if ((i + 1) % 3 === 0) {
-				processedNumber.push(filtered[i]);
-				processedNumber.push('-');
-			} else {
-				processedNumber.push(filtered[i]);
-			}
-		}
-		formattedNumber = processedNumber.splice(0, processedNumber.length - 1).join('');
-	} else {
-		for (let i = 0; i < filtered.length; i++) {
-			if (filtered.length - i > 4) {
-				if ((i + 1) % 3 === 0) {
-					processedNumber.push(filtered[i]);
-					processedNumber.push('-');
-				} else {
-					processedNumber.push(filtered[i]);
-				}
-			} else if (filtered.length - i === 3) {
-				processedNumber.push(filtered[i]);
-				processedNumber.push('-');
-			} else {
-				processedNumber.push(filtered[i]);
-			}
-		}
-		formattedNumber = processedNumber.join('');
-	}
+  if (filtered.length % 3 === 0) {
+    for (let i = 0; i < filtered.length; i++) {
+      if ((i + 1) % 3 === 0) {
+        processedNumber.push(filtered[i]);
+        processedNumber.push('-');
+      } else {
+        processedNumber.push(filtered[i]);
+      }
+    }
+    formattedNumber = processedNumber.splice(0, processedNumber.length - 1).join('');
+  } else {
+    for (let i = 0; i < filtered.length; i++) {
+      if (filtered.length - i > 4) {
+        if ((i + 1) % 3 === 0) {
+          processedNumber.push(filtered[i]);
+          processedNumber.push('-');
+        } else {
+          processedNumber.push(filtered[i]);
+        }
+      } else if (filtered.length - i === 3) {
+        processedNumber.push(filtered[i]);
+        processedNumber.push('-');
+      } else {
+        processedNumber.push(filtered[i]);
+      }
+    }
+    formattedNumber = processedNumber.join('');
+  }
 
-	return formattedNumber;
+  return formattedNumber;
 }
 
 console.log(solution('00-44   48  5555 8361'));

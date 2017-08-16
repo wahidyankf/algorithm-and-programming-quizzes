@@ -12,24 +12,24 @@ let word3 = 'Success';
 let word4 = '(( @';
 
 function duplicateEncode(word) {
-	// ...
-	let tempDict = {};
-	let encoded = '';
-	for (let letter in word) {
-		if (word[letter].toLowerCase() in tempDict) {
-			tempDict[word[letter].toLowerCase()] += 1;
-		} else {
-			tempDict[word[letter].toLowerCase()] = 1;
-		}
-	}
-	for (let letter in word) {
-		if (tempDict[word[letter].toLowerCase()] > 1) {
-			encoded += ')';
-		} else {
-			encoded += '(';
-		}
-	}
-	return encoded;
+  // ...
+  let tempDict = {};
+  let encoded = '';
+  for (let letter in word) {
+    if (word[letter].toLowerCase() in tempDict) {
+      tempDict[word[letter].toLowerCase()] += 1;
+    } else {
+      tempDict[word[letter].toLowerCase()] = 1;
+    }
+  }
+  for (let letter in word) {
+    if (tempDict[word[letter].toLowerCase()] > 1) {
+      encoded += ')';
+    } else {
+      encoded += '(';
+    }
+  }
+  return encoded;
 }
 
 console.log(duplicateEncode(word1));

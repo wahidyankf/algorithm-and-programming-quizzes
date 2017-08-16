@@ -14,49 +14,49 @@
 // anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
 
 function anagrams(word, words) {
-	let anagram = [];
+  let anagram = [];
 
-	const createMap = (array) => {
-		let wordMap = new Map();
-		for (let i = 0; i < array.length; i++) {
-			if (wordMap.has(array[i])) {
-				wordMap.set(array[i], wordMap.get(array[i]) + 1);
-			} else {
-				wordMap.set(array[i], 1);
-			}
-		}
-		return wordMap;
-	};
+  const createMap = (array) => {
+    let wordMap = new Map();
+    for (let i = 0; i < array.length; i++) {
+      if (wordMap.has(array[i])) {
+        wordMap.set(array[i], wordMap.get(array[i]) + 1);
+      } else {
+        wordMap.set(array[i], 1);
+      }
+    }
+    return wordMap;
+  };
 
-	const compareDict = (map1, map2) => {
-		// check the composition of map
-		if (map1.size !== map2.size) {
-			return false;
-		}
-		// iter map and check the member of map
-		for (let [ key, val ] of map1) {
-			if (map2.has(key)) {
-				if (val !== map2.get(key)) {
-					return false;
-				}
-			} else {
-				return false;
-			}
-		}
-		return true;
-	};
+  const compareDict = (map1, map2) => {
+    // check the composition of map
+    if (map1.size !== map2.size) {
+      return false;
+    }
+    // iter map and check the member of map
+    for (let [ key, val ] of map1) {
+      if (map2.has(key)) {
+        if (val !== map2.get(key)) {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
+    return true;
+  };
 
-	let wordMap = createMap(word);
+  let wordMap = createMap(word);
 
-	for (let i = 0; i < words.length; i++) {
-		let wordsMap = createMap(words[i]);
-		// check length
-		if (compareDict(wordMap, wordsMap)) {
-			anagram.push(words[i]);
-		}
-	}
+  for (let i = 0; i < words.length; i++) {
+    let wordsMap = createMap(words[i]);
+    // check length
+    if (compareDict(wordMap, wordsMap)) {
+      anagram.push(words[i]);
+    }
+  }
 
-	return anagram;
+  return anagram;
 }
 
 console.log(anagrams('abba', [ 'aabb', 'abcd', 'bbaa', 'dada' ])); // => ['aabb', 'bbaa']

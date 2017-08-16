@@ -12,19 +12,19 @@
 // You can not assume that the integer will be only positive. You may be given negative numbers.
 
 function isPrime(num) {
-	//TODO
-	if (num === 0 || num === 1 || num < 0) {
-		return false;
-	} else if (num === 2) {
-		return true;
-	} else if (num > 1) {
-		for (let i = 2; i < num; i++) {
-			if (num % i === 0) {
-				return false;
-			}
-		}
-		return true;
-	}
+  //TODO
+  if (num === 0 || num === 1 || num < 0) {
+    return false;
+  } else if (num === 2) {
+    return true;
+  } else if (num > 1) {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
 
 console.log(isPrime(0));
