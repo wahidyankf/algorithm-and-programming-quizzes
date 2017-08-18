@@ -18,16 +18,16 @@
 
 // NOTE 2: The 0x0 (empty matrix) is represented as [[]]
 
-const snail = function(array) {
+const snail = function (array) {
   // go right, bottom, left, up, right
   let sorted = [];
   let options = [];
   let operation = null;
 
-  const goRight = [ 0, 1 ];
-  const goLeft = [ 0, -1 ];
-  const goTop = [ -1, 0 ];
-  const goBottom = [ 1, 0 ];
+  const goRight = [0, 1];
+  const goLeft = [0, -1];
+  const goTop = [-1, 0];
+  const goBottom = [1, 0];
 
   let coordinate = [];
   let optionIndex = null;
@@ -36,13 +36,13 @@ const snail = function(array) {
   const move = (currentCoordinate, operation) => {
     let resultingCoordinate = [];
     if (operation == 'right') {
-      resultingCoordinate = [ coordinate[0] + goRight[0], coordinate[1] + goRight[1] ];
+      resultingCoordinate = [coordinate[0] + goRight[0], coordinate[1] + goRight[1]];
     } else if (operation == 'left') {
-      resultingCoordinate = [ coordinate[0] + goLeft[0], coordinate[1] + goLeft[1] ];
+      resultingCoordinate = [coordinate[0] + goLeft[0], coordinate[1] + goLeft[1]];
     } else if (operation == 'bottom') {
-      resultingCoordinate = [ coordinate[0] + goBottom[0], coordinate[1] + goBottom[1] ];
+      resultingCoordinate = [coordinate[0] + goBottom[0], coordinate[1] + goBottom[1]];
     } else if (operation == 'top') {
-      resultingCoordinate = [ coordinate[0] + goTop[0], coordinate[1] + goTop[1] ];
+      resultingCoordinate = [coordinate[0] + goTop[0], coordinate[1] + goTop[1]];
     }
     return resultingCoordinate;
   };
@@ -95,7 +95,7 @@ const snail = function(array) {
   // create available coordinate
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array.length; j++) {
-      options.push([ i, j ]);
+      options.push([i, j]);
     }
   }
 
@@ -103,7 +103,7 @@ const snail = function(array) {
   while (options.length > 0) {
     if (operation === null) {
       operation = 'initial';
-      coordinate = [ 0, 0 ];
+      coordinate = [0, 0];
     } else if (operation == 'right') {
       coordinate = move(coordinate, operation);
     } else if (operation == 'left') {
@@ -122,11 +122,24 @@ const snail = function(array) {
   return sorted;
 };
 
-let array1 = [ [ 1, 2, 3 ], [ 4, 5, 6 ], [ 7, 8, 9 ] ];
+let array1 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
 console.log(snail(array1)); // => [1,2,3,6,9,8,7,4,5]
-let array2 = [ [ 1, 2, 3, 1 ], [ 4, 5, 6, 4 ], [ 7, 8, 9, 7 ], [ 7, 8, 9, 7 ] ];
+let array2 = [
+  [1, 2, 3, 1],
+  [4, 5, 6, 4],
+  [7, 8, 9, 7],
+  [7, 8, 9, 7]
+];
 console.log(snail(array2)); // => [1, 2, 3, 1, 4, 7, 7, 9, 8, 7, 7, 4, 5, 6, 9, 8]
-console.log(snail([ 1 ])); // => [1]
-console.log(snail([ [ 1, 2, 3, 4 ] ])); // => [1, 2, 3, 4]
+console.log(snail([1])); // => [1]
+console.log(snail([
+  [1, 2, 3, 4]
+])); // => [1, 2, 3, 4]
 console.log(snail([])); // => []
-console.log(snail([ [] ])); // => []
+console.log(snail([
+  []
+])); // => []

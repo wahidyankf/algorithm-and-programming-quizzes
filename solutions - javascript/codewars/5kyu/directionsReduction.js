@@ -98,6 +98,6 @@ function dirReduc(arr) {
   return arr;
 }
 
-console.log('First: ' + dirReduc([ 'NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST' ]));
-console.log('Second: ' + dirReduc([ 'NORTH', 'WEST', 'SOUTH', 'EAST' ]));
-console.log('Third: ' + dirReduc([ 'NORTH', 'SOUTH', 'EAST', 'WEST', 'EAST', 'WEST' ]));
+console.log('First: ' + dirReduc(['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST']));
+console.log('Second: ' + dirReduc(['NORTH', 'WEST', 'SOUTH', 'EAST']));
+console.log('Third: ' + dirReduc(['NORTH', 'SOUTH', 'EAST', 'WEST', 'EAST', 'WEST']));

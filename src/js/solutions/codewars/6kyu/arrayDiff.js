@@ -7,8 +7,8 @@
 
 // array_diff([1,2,2,2,3],[2]) == [1,3]
 
-let a = [ 1, 2, 3, 2, 4 ];
-let b = [ 1, 2 ];
+let a = [1, 2, 3, 2, 4];
+let b = [1, 2];
 
 function array_diff(a, b) {
   let deleteList = [];

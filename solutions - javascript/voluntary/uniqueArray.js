@@ -17,5 +17,5 @@ function uniqueArray(array) {
   }, []);
 }
 
-console.log(uniqueArray([ 1, 1, 2, 3, 4, 4 ]));
-console.log(uniqueArray([ 'a', 'a', 'b', 'c', 'b', 'e', 'd', 'e' ]));
+console.log(uniqueArray([1, 1, 2, 3, 4, 4]));
+console.log(uniqueArray(['a', 'a', 'b', 'c', 'b', 'e', 'd', 'e']));

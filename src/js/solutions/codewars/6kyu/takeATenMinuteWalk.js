@@ -3,14 +3,14 @@
 // Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
 //some test cases for you...
-let walk = [ 'n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's' ];
-let walk2 = [ 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e' ];
-let walk3 = [ 'w' ];
-let walk4 = [ 'n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's' ];
+let walk = ['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's'];
+let walk2 = ['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'];
+let walk3 = ['w'];
+let walk4 = ['n', 'n', 'n', 's', 'n', 's', 'n', 's', 'n', 's'];
 
 function isValidWalk(walk) {
   //insert brilliant code here
-  let coordinate = [ 0, 0 ];
+  let coordinate = [0, 0];
 
   if (walk.length !== 10) {
     return false;
