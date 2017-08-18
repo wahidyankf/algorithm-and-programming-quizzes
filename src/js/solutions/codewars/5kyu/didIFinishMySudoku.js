@@ -74,9 +74,9 @@
 //                          [2, 8, 7, 4, 1, 9, 6, 3, 5],
 //                          [3, 0, 0, 4, 8, 1, 1, 7, 9]]), "Try again!");
 
-let doneOrNot = (board) => {
+let doneOrNot = board => {
   // check duplicate
-  const checkDuplicate = (array) => {
+  const checkDuplicate = array => {
     let setArray = new Set(array);
     if (array.length === setArray.size) {
       return false;

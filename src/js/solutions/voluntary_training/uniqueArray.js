@@ -5,7 +5,7 @@
 
 function uniqueArray(array) {
   return array.reduce((previous, e) => {
-    let isThere = previous.some((f) => {
+    let isThere = previous.some(f => {
       return f === e;
     });
 

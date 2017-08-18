@@ -29,7 +29,9 @@ function solution(S) {
         processedNumber.push(filtered[i]);
       }
     }
-    formattedNumber = processedNumber.splice(0, processedNumber.length - 1).join('');
+    formattedNumber = processedNumber
+      .splice(0, processedNumber.length - 1)
+      .join('');
   } else {
     for (let i = 0; i < filtered.length; i++) {
       if (filtered.length - i > 4) {

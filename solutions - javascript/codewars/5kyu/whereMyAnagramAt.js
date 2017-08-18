@@ -16,7 +16,7 @@
 function anagrams(word, words) {
   let anagram = [];
 
-  const createMap = (array) => {
+  const createMap = array => {
     let wordMap = new Map();
     for (let i = 0; i < array.length; i++) {
       if (wordMap.has(array[i])) {

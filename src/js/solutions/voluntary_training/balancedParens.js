@@ -2,7 +2,7 @@
 // ex: ()()() -> true, )()()( -> false, ()()()( -> false
 
 function balancedParens(string) {
-  return !string.split('').reduce(function (previous, char) {
+  return !string.split('').reduce(function(previous, char) {
     if (previous < 0) {
       return previous;
     }
