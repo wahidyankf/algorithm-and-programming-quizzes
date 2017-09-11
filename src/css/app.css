@@ -19,11 +19,19 @@ html {
 /**
  * Add the correct display in IE 9-.
  */
+article,
+aside,
+nav,
+section {
+  display: block; }
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
 
 /* Grouping content
    ========================================================================== */
@@ -31,6 +39,9 @@ html {
  * Add the correct display in IE 9-.
  * 1. Add the correct display in IE.
  */
+main {
+  /* 1 */
+  display: block; }
 
 /**
  * Add the correct margin in IE 8.
@@ -40,6 +51,14 @@ html {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -52,6 +71,11 @@ html {
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
 
 /**
  * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
@@ -101,6 +125,8 @@ html {
 /**
  * Remove the border on images inside links in IE 10-.
  */
+img {
+  border-style: none; }
 
 /**
  * Hide the overflow in IE.
